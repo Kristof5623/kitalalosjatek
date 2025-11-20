@@ -1,0 +1,207 @@
+body{
+    background-color: black;
+    color: white;
+    font-size: 16px; /* alap méret (mobilbarát) */
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+#welcomeLetter{
+    text-align: center;
+    margin-top: 12px;
+}
+
+.players{
+    margin-left: 0;
+}
+
+.hidden{
+    display: none;
+}
+
+.btn{
+    border-radius: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+#player1name, #player2name{
+    border-radius: 5px;
+    padding: 8px;
+}
+
+/* általános gomb / input / select stílus */
+button{
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    border: none;
+    background: #444;
+    color: #fff;
+    border-radius: 6px;
+}
+
+input{
+    font-size: 0.95rem;
+    width: 220px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 6px;
+    border: 1px solid #333;
+    background: #111;
+    color: #fff;
+}
+
+select{
+    font-size: 0.95rem;
+    border-radius: 5px;
+    padding: 6px;
+    background: #111;
+    color: #fff;
+    border: 1px solid #333;
+}
+
+/* Játéktér */
+#player1Game{
+    text-align: center;
+    position: relative;
+    margin: 18px auto;
+    max-width: 720px;
+}
+
+/* Difficulty cím */
+#player1Difficulty{
+    font-size: 1.05rem;
+}
+
+/* Kezdő gomb nagyobb a desktopon */
+#begginBtn{
+    font-size: 1.4rem;
+}
+
+/* Eredmény megjelenítése */
+#result{
+    text-align: center;
+    margin-top: 12%;
+}
+
+/* Tipp mező alap elhelyezés (desktop esetén) */
+#tippLines{
+    position: relative;
+    left: 10%;
+    top: 20%;
+    z-index: 60;        /* nagyobb mint a .playerCorner z-index-e */
+    margin-top: 12px;
+}
+
+/* Előző tippek doboza */
+#previousGuesses {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    max-height: 205px;
+    overflow-y: auto;
+    background: rgba(0,0,0,0.25);
+}
+
+#previousGuesses div {
+    margin: 5px;
+    padding: 5px;
+    border-bottom: 1px solid #444;
+}
+
+/* Player corner doboz */
+.playerCorner{
+    position: absolute;
+    top: -3%;
+    left: 1%;
+    border: 3px solid gold;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgba(218, 165, 32, 0.5);
+    color: rgb(0, 0, 0);
+    z-index: 50;
+}
+
+/* Egyéb pozícionált elem (desktop) */
+#playersnames{
+    position: absolute;
+    left: 35%;
+    top: 30%;
+}
+
+/* ---------- Mobil media query ---------- */
+@media (max-width: 480px) {
+    body{
+        font-size: 15px;
+        padding: 0 14px;
+    }
+
+    #player1Game{
+        position: relative;
+        margin-top: 14px;
+        padding-bottom: 12px;
+        padding-top: 32px;
+    }
+
+    /* input és select legyen széles, mobilbarát */
+    input, select {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    button {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 8px;
+    }
+
+    /* tipp sorok legyenek áramvonalasak, ne absolute */
+    #tippLines{
+        position: relative;
+        left: auto;
+        top: auto;
+        margin-top: 51px;
+        z-index: 60;
+    }
+
+    /* playerCorner kisebb, rögzített, hogy jó legyen mobilon */
+    .playerCorner{
+        position: fixed;
+        top: 8px;
+        left: 8px;
+        padding: 6px 8px;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        z-index: 50;
+    }
+
+    #result{
+        margin-top: 24%;
+        padding: 0 8px;
+    }
+
+    #previousGuesses {
+        max-height: 140px;
+        padding: 8px;
+    }
+
+    #playersnames{
+        position: static;
+        left: auto;
+        top: auto;
+        margin-top: 12px;
+    }
+
+    #begginBtn{
+        font-size: 1.2rem;
+    }
+
+    .players{
+        font-size: x-large;
+    }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing game</title>
+    <link rel="stylesheet" href="guessing.css">
+    <link rel="stylesheet" href="guessing_mobile.css" media="(max-width: 480px)" >
+</head>
+<body>
+    <h1 id="welcomeLetter">Welcome to this guessing game!</h1><br>
+
+    <div id="kezdo">
+        <h3>Please enter your name:</h3>
+        <div id="playersnames">
+            <label for="" id="beker"> Player 1:</label>
+            <input type="text" id="player1name"><br>
+            <label for="" id="beker1">Player 2:</label>
+            <input type="text" id="player2name">
+            <button id="submit" class="btn">Submit</button>
+        </div>
+        <h3 id="player1,2" class="players hidden"></h3>
+        <button id="start1" class="hidden btn">Ready</button>
+    </div>
+
+    <div id="player1Game" class="hidden">
+    
+        <h3 for="" id="instraction">This is a guessing game where you have to guess the number I thought!</h3>
+        <label for="" id="difficultych">Now choose which level you want to compete at: <br>
+            very easy (1,10) <br>
+            easy (1,100) <br>
+            normal (1,1.000) <br>
+            hard (1,10.000) <br>
+            very hard (1,100.000) <br>
+            insane (1,1.000.000) 
+        </label>
+        <section id="player1Difficulty"><br>
+            <label for="difficulty">Choose difficulty:</label>
+                <select>
+                    <option value="1" class="veryeasy">very easy</option>
+                    <option value="2" class="easy">easy</option>
+                    <option value="3" class="normal">normal</option>
+                    <option value="4" class="hard">hard</option>
+                    <option value="5" class="veryhard">very hard</option>
+                    <option value="6" class="insane">insane</option>
+                </select>
+        </section><br>
+        <label for="attempts" id="attemptsLabel">Please also indicate how many trials do you wantt to figure out the solution: </label>
+        <input type="number" id="attempts"><br><br>
+        <button id="begginBtn" class="btn">Start</button>
+    </div>
+
+    <h2 id="player1Corner" class="hidden playerCorner"></h2>
+    <div id="tippLines" class="hidden">
+        <label for="guesses" id="guessLabel">Give your guess:</label>
+        <input type="number" id="guess">
+        <button class="btn" id="tippBtn">Guess</button>
+        <div id="previousGuesses"></div>
+    </div>
+
+    <h2 id="result" class="hidden"></h2>
+
+
+
+
+
+
+
+    <script src="guessing.js"></script>
+</body>
+</html>
